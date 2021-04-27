@@ -39,7 +39,7 @@ Installation
 And run require via composer
 
 ```bash
-composer require agungsugiarto/boilerplate
+composer require flightsadmin/boilerplate
 ```
 
 **2.** Set CI_ENVIRONMENT, baseURL, index page, and database config in your `.env` file based on your existing database (If you don't have a `.env` file, you can copy first from `env` file: `cp env .env` first). If the database does not exist, create the database first.
@@ -81,12 +81,12 @@ Is it ready yet? Not so fast!! ;-) After publishing `Config/Auth.php` you need t
 `public $views` with these lines below:
 ```php
 public $views = [
-    'login'           => 'agungsugiarto\boilerplate\Views\Authentication\login',
-    'register'        => 'agungsugiarto\boilerplate\Views\Authentication\register',
-    'forgot'          => 'agungsugiarto\boilerplate\Views\Authentication\forgot',
-    'reset'           => 'agungsugiarto\boilerplate\Views\Authentication\reset',
-    'emailForgot'     => 'agungsugiarto\boilerplate\Views\Authentication\emails\forgot',
-    'emailActivation' => 'agungsugiarto\boilerplate\Views\Authentication\emails\activation',
+    'login'           => 'Boilerplate\Views\Authentication\login',
+    'register'        => 'Boilerplate\Views\Authentication\register',
+    'forgot'          => 'Boilerplate\Views\Authentication\forgot',
+    'reset'           => 'Boilerplate\Views\Authentication\reset',
+    'emailForgot'     => 'Boilerplate\Views\Authentication\emails\forgot',
+    'emailActivation' => 'Boilerplate\Views\Authentication\emails\activation',
 ];
 ```
 
@@ -94,12 +94,12 @@ Open `app\Config\Filters.php`, find `$aliases` and add these lines below:
 ```php
 public $aliases = [
     'login'      => \Myth\Auth\Filters\LoginFilter::class,
-    'role'       => \agungsugiarto\boilerplate\Filters\RoleFilter::class,
-    'permission' => \agungsugiarto\boilerplate\Filters\PermissionFilter::class,
+    'role'       => \Boilerplate\Filters\RoleFilter::class,
+    'permission' => \Boilerplate\Filters\PermissionFilter::class,
 ];
 ```
 
-**4.** Run publish, migrate and seed boilerplate
+**4.** Run publish, migrate and seed Boilerplate
 
 ```bash
 php spark boilerplate:install
@@ -135,7 +135,7 @@ class Boilerplate extends BaseConfig
     public $appName = 'Boilerplate';
 
     public $dashboard = [
-        'namespace'  => 'agungsugiarto\boilerplate\Controllers',
+        'namespace'  => 'Boilerplate\Controllers',
         'controller' => 'DashboardController::index',
         'filter'     => 'permission:back-office',
     ];
