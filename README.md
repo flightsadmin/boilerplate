@@ -73,6 +73,9 @@ Publish Config file? [y, n]: y
   created: Config/Auth.php
 Publish Language file? [y, n]: n
 ```
+**4.** Update Validation file
+
+Edit app/Config/Validation.php and add the following value to the ruleSets array: \Myth\Auth\Authentication\Passwords\ValidationRules::class
 
 > NOTE: Everything about how to configure auth you can find add [Myth/Auth](https://github.com/lonnieezell/myth-auth).
 
