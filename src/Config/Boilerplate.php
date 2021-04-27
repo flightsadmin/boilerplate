@@ -13,7 +13,7 @@ class Boilerplate extends BaseConfig
     // App name
     //--------------------------------------------------------------------------
 
-    public $appName = 'Boilerplate';
+    public $appName = 'Flight Admin';
 
     //--------------------------------------------------------------------------
     // Dashboard controller
